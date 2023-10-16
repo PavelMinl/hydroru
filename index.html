@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper_about.css">
 </head>
 <body>
 <section class="header">
@@ -27,9 +28,68 @@
             <div class="header__connect--mobile">
                 <a><img src="img/call.svg"></a>
             </div>
-            <div class="header__menu">
-                <a> <img src="img/menu.svg"></a>
-            </div>
+            <nav class="header__navigation">
+                <input type="checkbox" id="menu" name="menu" class="header__menu--checkbox">
+                <label class="header__menu--toggle" for="menu">
+                    <img src="img/menu.svg">
+                </label>
+                <label class="header__menu--overlay" for="menu"></label>
+
+                <div class="header__menu">
+                    <div class="header__menu--header">
+                        <div>
+                            <img class="logo__mobile--menu" src="img/logo.png">
+                            <span>
+                                Качественная техника для профессионалов
+                            </span>
+                            <a><img src="img/call.svg"></a>
+                            <label class="header__menu--toggle" for="menu">
+                                <img src="img/menu_close.svg">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="header__menu--list">
+                        <ul>
+                            <li class="animated--arrow"><a href="index.html">Главная</a></li>
+                            <li class="animated--arrow"><span class="the-arrow -left">
+                             <span class="shaft"></span>
+                         </span>
+                                <a href="catalog.html">Каталог</a></li>
+                            <li class="animated--arrow">
+                <span class="the-arrow -left">
+                             <span class="shaft"></span>
+                         </span>
+                                <a href="services.html">Услуги</a></li>
+                            <li class="animated--arrow"><span class="the-arrow -left">
+                             <span class="shaft"></span>
+                         </span>
+                                <a href="gallery.html">Галерея</a></li>
+                            <li class="animated--arrow">
+                <span class="the-arrow -left">
+                             <span class="shaft"></span>
+                         </span><a href="about.html">О компании</a></li>
+                            <li class="animated--arrow"><span class="the-arrow -left">
+                             <span class="shaft"></span>
+                         </span>
+                                <a href="contact.html">Контакты</a>
+                                <span class="arrow-bottom the-arrow -left">
+                             <span class="shaft"></span>
+                         </span></li>
+                        </ul>
+                        <div class="contact__mobile">
+                        <div class="mobile__contact">
+                            <p>Телефон</p>
+                            <a>+7 (999) 999-99-99</a>
+                        </div>
+                        <div class="mobile__contact">
+                            <p>E-mail:</p>
+                            <a>contact@mail.ru</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </nav>
         </div>
     </div>
     <div class="header__bottom">
@@ -44,8 +104,41 @@
     </div>
 </section>
 <section class="main">
-    <div class="main__slider">
-        <img src="img/main_slider.png">
+    <div class="main__slider swiper_main">
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="main__slider--img swiper-slide"><img src="img/main_slider.png">
+                <div class="main__slider--text">
+                    <p>Универсальная мастерская
+                        для профессионалов</p>
+                    <a href="catalog.html">Посмотреть</a>
+                </div>
+            </div>
+            <div class="main__slider--img swiper-slide"><img src="img/main_slider.png">
+                <div class="main__slider--text">
+                    <p>Универсальная мастерская
+                        для профессионалов</p>
+                    <a href="catalog.html">Посмотреть</a>
+                </div></div>
+            <div class="main__slider--img swiper-slide"><img src="img/main_slider.png">
+                <div class="main__slider--text">
+                    <p>Универсальная мастерская
+                        для профессионалов</p>
+                    <a href="catalog.html">Посмотреть</a>
+                </div></div>
+            <div class="main__slider--img swiper-slide"><img src="img/main_slider.png">
+                <div class="main__slider--text">
+                    <p>Универсальная мастерская
+                        для профессионалов</p>
+                    <a href="catalog.html">Посмотреть</a>
+                </div></div>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
     <div class="main__info">
         <div class="main__info--part">
@@ -237,6 +330,7 @@
     </div>
 </section>
 <script defer src="js/jquery.min.js"></script>
-<script defer src="js/script.js"></script>
+<script defer src="js/swiper-bundle.min.js"></script>
+<script defer src="js/main/script.js"></script>
 </body>
 </html>

@@ -222,9 +222,14 @@ a {
 }
 
 .header__bottom {
-    z-index: 1;
+    z-index: 2;
 }
-
+.main__slider{
+    padding-top: 10px;
+    overflow: hidden;
+    margin-top: -10px;
+    position: relative;
+}
 @media (max-width: 1100px) {
     .header__navigate a {
         padding: 23px 30px;
@@ -234,9 +239,6 @@ a {
     .header__phone {
         margin-right: 20px;
     }
-}
-
-@media (max-width: 990px) {
     .header__navigate {
         display: none;
     }
@@ -270,6 +272,7 @@ a {
     }
 }
 
+
 @media (max-width: 600px) {
     .header__left span {
         font-size: 10px;
@@ -289,6 +292,7 @@ a {
 .main__slider img {
     width: 100%;
     margin-top: -10px;
+    min-height: 400px;
 }
 
 .main__info {
@@ -1743,7 +1747,11 @@ a {
         gap: 20px;
     }
     .header__top{
-        margin: 25px 0 0;
+        margin: 25px 0 25px;
+    }
+    .main__slider img{
+        margin-top: 0;
+        object-fit: cover;
     }
 }
 @media (max-width: 900px) {
@@ -1920,5 +1928,209 @@ a {
     }
     .contact__connection > div{
         padding: 30px;
+    }
+}
+.header__menu{
+    display: flex;
+    flex-direction: column;
+}
+.header__navigation {
+    z-index: 12;
+    padding: 0 16px;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    /* fade in checked menu */
+}
+.header__navigation .header__menu--checkbox {
+    display: none;
+}
+.header__navigation label.header__menu--toggle {
+    cursor: pointer;
+}
+.header__navigation .header__menu {
+    padding: 27px 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-width: 388px;
+    width: calc(100vw - 30px);
+    height: 100%;
+    -moz-transform: translate3d(450px, 0, 0);
+    -o-transform: translate3d(450px, 0, 0);
+    -ms-transform: translate3d(450px, 0, 0);
+    -webkit-transform: translate3d(450px, 0, 0);
+    transform: translate3d(450px, 0, 0);
+    -moz-transition: transform 0.35s;
+    -o-transition: transform 0.35s;
+    -webkit-transition: transform 0.35s;
+    transition: transform 0.35s;
+    z-index: 1;
+    overflow: scroll;
+    background-color: #FFFFFF;
+}
+.header__navigation .header__menu--overlay {
+    background-color: rgba(103, 103, 103, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    z-index: 1;
+    display: none;
+}
+.header__navigation .header__menu--header>div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.header__navigation .header__menu .header__menu {
+    -moz-transform: translate3d(480px, 0, 0);
+    -o-transform: translate3d(480px, 0, 0);
+    -ms-transform: translate3d(480px, 0, 0);
+    -webkit-transform: translate3d(480px, 0, 0);
+    transform: translate3d(480px, 0, 0);
+}
+.header__navigation .header__menu--checkbox:checked ~ .header__menu--overlay {
+    display: block;
+}
+.header__navigation .header__menu--checkbox:checked ~ .header__menu {
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.logo__mobile--menu{
+    max-width: 140px;
+    width: 100%;
+}
+.header__menu--header>div span{
+    color: #272727;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%; /* 13px */
+    margin: 0 15px;
+}
+.header__menu--header>div a{
+    margin-right: 10px;
+}
+.header__menu--list li{
+    list-style-type: none;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.header__menu--list a{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90%; /* 21.6px */
+    letter-spacing: -0.72px;
+}
+.header__menu--list{
+    border-radius: 8px;
+    background: linear-gradient(90deg, #005BE2 0%, #43A5FF 100%);
+    padding: 40px;
+}
+.header__menu--list .mobile__contact p{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    margin-bottom: 10px;
+}
+.header__menu--list .mobile__contact a{
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+}
+.contact__mobile{
+    margin: 40px 0 0;
+}
+.mobile__contact{
+    margin-bottom: 40px;
+}
+.header__menu,
+body::-webkit-scrollbar {
+    width: 5px;               /* ширина scrollbar */
+}
+.header__menu,
+body::-webkit-scrollbar-thumb {
+    background-color:  rgba(105, 105, 105, 0.5);
+    border-radius: 20px;       /* закругления плашки */
+}
+.main__slider--img .main__slider--text{
+    position: absolute;
+}
+.main__slider--text p{
+    color: #FFF;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90%; /* 57.6px */
+    letter-spacing: -1.92px;
+    margin-bottom: 60px;
+    max-width: 65%
+}
+.main__slider--text a{
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%; /* 20.8px */
+    letter-spacing: -0.48px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    border: 2px solid #FFF;
+    display: inline-block;
+    text-decoration: none;
+}
+.main__slider--text{
+    bottom: 40px;
+    left: 60px;
+}
+
+@media (max-width: 1100px) {
+    .main__slider--text p{
+        color: #FFF;
+        font-size: 48px;
+        line-height: 90%; /* 57.6px */
+        letter-spacing: -1.92px;
+        margin-bottom: 40px;
+        max-width: 65%
+    }
+    .main__slider--text a{
+        color: #FFF;
+        font-size: 14px;
+        line-height: 130%; /* 20.8px */
+        letter-spacing: -0.48px;
+        padding: 12px 25px;
+        border-radius: 8px;
+        border: 2px solid #FFF;
+        display: inline-block;
+        text-decoration: none;
+    }
+}
+@media (max-width: 850px) {
+    .main__slider--text p{
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    .main__slider--text a{
+        font-size: 12px;
+        padding: 12px 20px;
+    }
+    .main__slider--text{
+        bottom: 30px;
+        left: 30px;
     }
 }
