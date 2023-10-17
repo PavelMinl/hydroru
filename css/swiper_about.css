@@ -748,10 +748,11 @@ button.swiper-pagination-bullet {
     padding: 14px 20px;
 }
 .main__slider .swiper-pagination{
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 40px;
-    width: 95%;
+    top:initial;
+    left: initial;
+    right: 40px;
+    bottom: 40px;
+    width: initial;
 }
 .main__slider .swiper-pagination-bullet.swiper-pagination-bullet-active{
     background: #005BE2;
@@ -761,7 +762,8 @@ button.swiper-pagination-bullet {
     .main__slider .swiper-pagination{
         width: 100%;
         margin-bottom: 0;
-        display: block;
+        right: initial;
+        bottom: 8px;
     }
     .main__slider .swiper-pagination-bullet{
         width: 10px;
